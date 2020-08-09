@@ -1,0 +1,80 @@
+/* possicao da div do ambuguer */
+
+.burguer {
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    /* display none desabilita o
+     menu ambuguer, ja que ele tem 
+     que aparecer somente no mobile */
+    display: none;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    z-index: 20;
+}
+
+
+/* Desenho das linhas do ambuguer */
+
+.burguer>div {
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 10px;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+}
+
+
+/* quando o menu  mobile estiver berto */
+
+
+/* troca de cor */
+
+.open>div {
+    background-color: #ccc;
+}
+
+
+/* rotaciona as linhas do amburgue causando uma animacao */
+
+.open>div:nth-child(1) {
+    rotate: 45deg;
+}
+
+.open>div:nth-child(2) {
+    transform: translateX(100px);
+}
+
+.open>div:nth-child(3) {
+    rotate: -45deg;
+}
+
+
+/*quando estiver feixada  */
+
+.closed>div {
+    background-color: #333;
+}
+
+.closed>div:nth-child(1) {
+    rotate: 0;
+}
+
+.closed>div:nth-child(2) {
+    transform: translateX(0);
+}
+
+.closed>div:nth-child(3) {
+    rotate: 0;
+}
+
+
+/* ativa o menu ambuguer quando ele estiver com a tela mobile */
+
+@media (max-width: 768px) {
+    .burguer {
+        display: flex;
+    }
+}
